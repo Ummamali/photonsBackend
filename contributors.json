@@ -3,28 +3,38 @@
     "name": "Ummam Ali",
     "id": "ummamAli",
     "contributions": [
-      { "stamp": 1624716458696, "amount": 300 },
-      { "stamp": 1624716458696, "amount": 300 }
+      {
+        "stamp": 1237612736,
+        "amount": 300
+      },
+      {
+        "stamp": 1237612736,
+        "amount": 100
+      }
     ]
   },
   "usmanKhan": {
     "name": "Usman Khan",
     "id": "usmanKhan",
     "contributions": [
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 }
+      {
+        "stamp": 1624716458696,
+        "amount": 100
+      },
+      {
+        "stamp": 1237612736,
+        "amount": 400
+      }
     ]
   },
   "abdulHadi": {
     "name": "Abdul Hadi Mir",
     "id": "abdulHadi",
     "contributions": [
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 },
-      { "stamp": 1624716458696, "amount": 100 }
+      {
+        "stamp": 1624716458696,
+        "amount": 100
+      }
     ]
   }
 }

@@ -9,7 +9,7 @@ def get_data_from_file(filename):
 
 def save_data_to_file(filename, dataDict):
     with open(filename, mode='w') as f:
-        dump(dataDict, f)
+        dump(dataDict, f, indent=2)
 
 
 def good_response(payload=None, msg="Success"):

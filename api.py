@@ -26,6 +26,7 @@ def get_status():
     current_month = [date.today().month, date.today().year]
     contr_total = {key: 0 for key in contr_data}
 
+    # this is to check if the current month is not in the database
     if((latest_month[0] < current_month[0]) or (latest_month[1] < latest_month[1])):
         latest = f'{current_month[0]}/{current_month[1]}'
         recents[latest] = []
@@ -60,6 +61,48 @@ def get_recents():
     recents.reverse()
 
     return good_response(recents)
+
+
+@app.route('/new/contribution', methods=('POST',))
+@cross_origin()
+def add_contribution():
+    reqObj = request.get_json()
+    recents = get_data_from_file('./recents.json')
+    contributors = get_data_from_file('./contributors.json')
+
+    for key in recents:
+        latest = key
+    latest_month = [int(item) for item in latest.split('/')]
+    current_month = [date.today().month, date.today().year]
+
+    # this is to check if the current month is not in the database
+    if((latest_month[0] < current_month[0]) or (latest_month[1] < latest_month[1])):
+        latest = f'{current_month[0]}/{current_month[1]}'
+        recents[latest] = []
+
+    # some checkings before mutations
+    if (reqObj["userName"] not in contributors):
+        return bad_response(msg='User Name not found!!!')
+
+    # some mutations in the recents and contributions
+    user_cont_list = contributors[reqObj["userName"]]["contributions"]
+    user_cont_list.append(reqObj["contObject"])
+
+    cont_string = f"{reqObj['userName']}/{len(user_cont_list) - 1}"
+    recents[latest].append(cont_string)
+    save_data_to_file('./recents.json', recents)
+    save_data_to_file('./contributors.json', contributors)
+    return good_response({'recent_string': cont_string}, msg="New Contribution has been added")
+
+
+@app.route('/check/username')
+@cross_origin()
+def check_username():
+    username = request.args.get('userName')
+    contributors = get_data_from_file('./contributors.json')
+    answer = username in contributors
+    sleep(1)
+    return good_response(payload={"isRegistered": answer})
 
 
 if __name__ == '__main__':
