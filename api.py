@@ -66,6 +66,14 @@ def get_recents():
 @app.route('/new/contribution', methods=('POST',))
 @cross_origin()
 def add_contribution():
+    """ 
+    API Reference
+    Request Object:
+        {
+        *userName: String,
+        *contObject: {*stamp: int, *amount: int}
+        }
+    """
     reqObj = request.get_json()
     recents = get_data_from_file('./recents.json')
     contributors = get_data_from_file('./contributors.json')
@@ -101,7 +109,7 @@ def check_username():
     username = request.args.get('userName')
     contributors = get_data_from_file('./contributors.json')
     answer = username in contributors
-    sleep(1)
+    sleep(2)
     return good_response(payload={"isRegistered": answer})
 
 
