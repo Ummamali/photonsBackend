@@ -78,6 +78,8 @@ def add_contribution():
     recents = get_data_from_file('./recents.json')
     contributors = get_data_from_file('./contributors.json')
 
+    sleep(1.5)
+
     for key in recents:
         latest = key
     latest_month = [int(item) for item in latest.split('/')]
@@ -109,8 +111,33 @@ def check_username():
     username = request.args.get('userName')
     contributors = get_data_from_file('./contributors.json')
     answer = username in contributors
-    sleep(2)
+    sleep(0.25)
     return good_response(payload={"isRegistered": answer})
+
+
+@app.route('/new/contributor', methods=('POST', ))
+@cross_origin()
+def add_contributor():
+    """
+        API Reference:
+        Request Object: 
+            {
+                *name: String,
+                *id: String
+            }
+    """
+    req_obj = request.get_json()
+    user_name = req_obj["name"]
+    user_id = req_obj["id"]
+    contributiors = get_data_from_file('./contributors.json')
+    contributiors[user_id] = {
+        "name": user_name,
+        "id": user_id,
+        "contributions": []
+    }
+    save_data_to_file('./contributors.json', contributiors)
+    sleep(1)
+    return good_response(msg='New User Has been added')
 
 
 if __name__ == '__main__':
