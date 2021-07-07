@@ -78,7 +78,7 @@ def add_contribution():
     recents = get_data_from_file('./recents.json')
     contributors = get_data_from_file('./contributors.json')
 
-    sleep(1.5)
+    sleep(0.5)
 
     for key in recents:
         latest = key
@@ -111,7 +111,7 @@ def check_username():
     username = request.args.get('userName')
     contributors = get_data_from_file('./contributors.json')
     answer = username in contributors
-    sleep(0.25)
+    sleep(1.5)
     return good_response(payload={"isRegistered": answer})
 
 
