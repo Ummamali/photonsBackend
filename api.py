@@ -1,4 +1,5 @@
 from flask import Flask, request
+from flask.json import jsonify
 from utils import get_data_from_file, save_data_to_file, good_response, bad_response, pathString_to_contrObject
 from flask_cors import cross_origin
 from datetime import datetime, date
@@ -18,6 +19,7 @@ def get_contributors():
 @app.route('/thismonth')
 @cross_origin()
 def get_status():
+    sleep(0.5)
     contr_data = get_data_from_file('./contributors.json')
     recents = get_data_from_file('./recents.json')
     for key in recents:
@@ -111,7 +113,6 @@ def check_username():
     username = request.args.get('userName')
     contributors = get_data_from_file('./contributors.json')
     answer = username in contributors
-    sleep(1.5)
     return good_response(payload={"isRegistered": answer})
 
 
@@ -136,7 +137,6 @@ def add_contributor():
         "contributions": []
     }
     save_data_to_file('./contributors.json', contributiors)
-    sleep(1)
     return good_response(msg='New User Has been added')
 
 

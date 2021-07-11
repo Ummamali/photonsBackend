@@ -144,6 +144,18 @@
       {
         "stamp": 1625664443639,
         "amount": 100
+      },
+      {
+        "stamp": 1625728683299,
+        "amount": 200
+      },
+      {
+        "stamp": 1625728688625,
+        "amount": 200
+      },
+      {
+        "stamp": 1625728986128,
+        "amount": 200
       }
     ]
   },
@@ -206,12 +218,35 @@
       {
         "stamp": 1625665390335,
         "amount": 100
+      },
+      {
+        "stamp": 1625832265733,
+        "amount": 200
       }
     ]
   },
   "testUser2": {
     "name": "Test User Two",
     "id": "testUser2",
-    "contributions": []
+    "contributions": [
+      {
+        "stamp": 1625832315292,
+        "amount": 200
+      }
+    ]
+  },
+  "test3": {
+    "name": "Test User Three",
+    "id": "test3",
+    "contributions": [
+      {
+        "stamp": 1625836103319,
+        "amount": 20
+      },
+      {
+        "stamp": 1625836166416,
+        "amount": 200
+      }
+    ]
   }
 }
