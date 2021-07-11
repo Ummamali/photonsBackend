@@ -54,15 +54,16 @@ def get_recents():
     length = len(recents)
     end_index = length - index
     if(end_index <= 0):
-        return good_response(payload=[], msg='Index is probably out of range')
+        return good_response(payload={'list': [], 'moreAvailable': False}, msg='Index is probably out of range')
     else:
         start_index = end_index - 10
         if (start_index < 0):
             start_index = 0
     recents = recents[start_index: end_index]
     recents.reverse()
+    more_available = start_index != 0
 
-    return good_response(recents)
+    return good_response({'list': recents, 'moreAvailable': more_available})
 
 
 @app.route('/new/contribution', methods=('POST',))
