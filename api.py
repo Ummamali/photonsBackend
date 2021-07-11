@@ -105,7 +105,7 @@ def add_contribution():
     recents[latest].append(cont_string)
     save_data_to_file('./recents.json', recents)
     save_data_to_file('./contributors.json', contributors)
-    return good_response({'recent_string': cont_string}, msg="New Contribution has been added")
+    return good_response({'recentString': cont_string}, msg="New Contribution has been added")
 
 
 @app.route('/check/username')
