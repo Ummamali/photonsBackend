@@ -1,0 +1,12 @@
+{
+  "autorun": true,
+  "autokill": true,
+  "terminals": [
+    {
+      "name": "BackendServer",
+      "icon": "debug-breakpoint",
+      "description": "Runs the backend server",
+      "commands": ["environ\\Scripts\\activate.bat", "python api.py"]
+    }
+  ]
+}
