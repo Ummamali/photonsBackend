@@ -148,5 +148,13 @@ def get_donors():
     return good_response(donors)
 
 
+@app.route('/check/donor')
+@cross_origin()
+def check_donor():
+    donors = get_data_from_file('donors.json')
+    reqName = request.args.get('name', '')
+    return good_response(payload={"available": reqName not in donors})
+
+
 if __name__ == '__main__':
     app.run(debug=True)

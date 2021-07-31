@@ -18,5 +18,10 @@
     "name": "Test Donor whose name is sooo long",
     "amount": 500,
     "hasPaid": true
+  },
+  "Ummam Ali": {
+    "name": "Ummam Ali",
+    "amount": 500,
+    "hasPaid": true
   }
 }
