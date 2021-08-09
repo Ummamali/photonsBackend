@@ -1,27 +1,12 @@
 {
-  "Test Donor": {
-    "name": "Test Donor whose name is sooo long",
-    "amount": 500,
+  "1628531398801test": {
+    "name": "test user one",
+    "amount": 200,
     "hasPaid": true
   },
-  "Test f": {
-    "name": "Test Donor whose name is sooo long",
-    "amount": 500,
-    "hasPaid": true
-  },
-  "Test fg": {
-    "name": "Test Donor whose name is sooo long",
-    "amount": 500,
-    "hasPaid": true
-  },
-  "Test Donfgdfor": {
-    "name": "Test Donor whose name is sooo long",
-    "amount": 500,
-    "hasPaid": true
-  },
-  "Ummam Ali": {
-    "name": "Ummam Ali",
-    "amount": 500,
+  "162853139777test": {
+    "name": "test user two",
+    "amount": 200,
     "hasPaid": true
   }
 }

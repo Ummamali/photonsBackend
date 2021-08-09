@@ -1,3 +1,4 @@
+from donorsUtils import get_updated_donors
 from flask import Flask, request
 from flask.json import jsonify
 from utils import get_data_from_file, save_data_to_file, good_response, bad_response, pathString_to_contrObject
@@ -115,6 +116,23 @@ def check_username():
     contributors = get_data_from_file('./contributors.json')
     answer = username in contributors
     return good_response(payload={"isRegistered": answer})
+
+
+@app.route("/donors/update", methods=('POST', ))
+@cross_origin()
+def update_donors():
+    """ 
+    API REFERENCE:
+     ---reqObject:
+        {
+            donorsDiff: dict (object)
+        }
+
+    """
+
+    reqObj = request.get_json()
+    donors_diff = reqObj.get("donorDiff")
+    return good_response(get_updated_donors(donors_diff))
 
 
 @app.route('/new/contributor', methods=('POST', ))
