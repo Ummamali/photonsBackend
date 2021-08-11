@@ -1,11 +1,6 @@
 {
-  "4/2021": [
-    "usmanKhan/0",
-    "abdulHadi/0"
-  ],
-  "6/2021": [
-    "usmanKhan/1"
-  ],
+  "4/2021": ["usmanKhan/0", "abdulHadi/0"],
+  "6/2021": ["usmanKhan/1"],
   "7/2021": [
     "usmanKhan/2",
     "ummamAli/0",
@@ -79,11 +74,29 @@
     "testFive/0",
     "testFive/1",
     "testFour/0",
-    "testUser/3",
     "usmanKhan/21",
+    "usmanKhan/22",
+    "ummamAli/32",
     "test/2",
+    "usmanKhan/23",
+    "usmanKhan/24",
+    "usmanKhan/25",
+    "usmanKhan/26",
+    "usmanKhan/27",
+    "usmanKhan/28",
+    "ummamAli/33",
+    "ummamAli/34",
+    "usmanKhan/29",
+    "usmanKhan/30",
+    "usmanKhan/31",
+    "usmanKhan/32",
+    "usmanKhan/33",
+    "ummamAli/35",
+    "usmanKhan/34",
     "test/3",
     "test/4",
+    "usmanKhan/35",
+    "usmanKhan/36",
     "test/5",
     "test/6",
     "test/7",
@@ -110,8 +123,5 @@
     "babarKhan/0",
     "babarKhan/1"
   ],
-  "8/2021": [
-    "abdulHadi/8",
-    "babarKhan/2"
-  ]
+  "8/2021": ["abdulHadi/8", "babarKhan/2"]
 }
